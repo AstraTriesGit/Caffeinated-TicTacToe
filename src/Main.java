@@ -1,12 +1,10 @@
-import java.util.Arrays;
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 class Main {
     public static int turns = 0;
     public static boolean victory = false;
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         String game = "_________";
         while (!X_wins(game) && !O_wins(game) && turns != 9){
             printState(game);
@@ -17,17 +15,14 @@ class Main {
     }
 
     public static void printState(String symbols){
-        System.out.println("---------");
-        for (int i = 0; i < symbols.length(); i += 3) {
-            System.out.print("| "+symbols.charAt(i)+" "+symbols.charAt(i+1)+" "+symbols.charAt(i+2)+" |\n");
-        }
-        System.out.println("---------");
+//        System.out.println("---------");
+//        for (int i = 0; i < symbols.length(); i += 3) {
+//            System.out.print("| "+symbols.charAt(i)+" "+symbols.charAt(i+1)+" "+symbols.charAt(i+2)+" |\n");
+//        }
+//        System.out.println("---------");
     }
 
     public static void gameState(String symbols){
-        // mirrors
-        String x_mirror = "XXX";
-        String o_mirror = "OOO";
 
         // illegal gameplay - too many of one char
         int x_count = 0;
